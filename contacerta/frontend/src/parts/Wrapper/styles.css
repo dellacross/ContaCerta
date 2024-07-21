@@ -1,0 +1,84 @@
+#wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#wrapper > aside {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    background-color: var(--main-color);
+    padding: 10px 0 10px 10px;
+    flex-direction: column;
+}
+
+#wrapper > aside > header {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #757575;
+    padding-bottom: 10px;
+}
+
+#wrapper > aside > header > ion-icon {
+    margin-right: 5px;
+}
+
+#wrapper > aside > main {
+    height: calc(100% - 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper > aside > main > nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding:  10px 0;
+    align-items: center;
+}
+
+#wrapper > aside > main > nav > button {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 15px;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #353b46;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#wrapper > aside > main > nav > button:hover {
+    color: #353b46;
+    background-color: #ccc;
+}
+
+#wrapper > aside > main > nav > button > ion-icon {
+    margin-right: 10px;
+    font-size: 1.35rem;
+}
+
+#wrapper > main {
+    height: 100%;
+    width: calc(100% - 250px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 25px;
+}

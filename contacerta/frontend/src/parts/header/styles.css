@@ -1,0 +1,43 @@
+#page-header {
+    min-height: 50px;
+    width: 100%;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0 10px;
+    background-color: var(--main-color);
+    box-shadow: 2px 2px 8px #21252B, 0px 0px 0px #21252B;
+    color: #fff;
+    font-weight: 600;
+}
+
+#page-header > span > ion-icon {
+    margin-right: 5px;
+}
+
+#page-header > button {
+    padding: 0 5px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    font-weight: 600;
+    height: 35px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-header > button > ion-icon {
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
+#page-header > button:hover {
+    background-color: #ccc;
+    color: var(--main-color);
+}

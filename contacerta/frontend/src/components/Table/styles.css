@@ -1,0 +1,5 @@
+#wrapper > main > section > #table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

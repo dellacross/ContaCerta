@@ -1,0 +1,6 @@
+#wrapper > main > section > #table > #table-footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    color: #fff;
+}
