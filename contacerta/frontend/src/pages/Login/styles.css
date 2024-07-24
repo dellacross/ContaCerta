@@ -8,10 +8,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
+    perspective: 1000px;
 }
 
 #login-wrapper > #login-container {
-    height: 600px;
+    height: 625px;
     width: 400px;
     display: flex;
     padding: 10px;
@@ -22,14 +23,29 @@
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 32px;
     flex-direction: column;
+    align-items: flex-start;
 }
 
-#login-wrapper > #login-container > h2 {
+#login-wrapper > #login-container > div {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#login-wrapper > #login-container > div > img {
+    height: 200px;
+}
+
+#login-wrapper > #login-container > div > h2 {
     margin: 0 auto;
     color: #fff;
 }
 
-#login-wrapper > #login-container > section {
+#login-wrapper > #login-container > div > section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,16 +53,16 @@
     flex-flow: column;
 }
 
-#login-wrapper > #login-container > section > .form-group {
+#login-wrapper > #login-container > div > section > .form-group {
     position: relative;
     margin: 12px 0;
     display: flex;
     width: 80%;
 }
 
-#login-wrapper > #login-container > section > .form-group input {
+#login-wrapper > #login-container > div > section > .form-group input {
     padding: 8px 10px;
-    font-size: 18px;
+    font-size: 1.15rem;
     border-radius: 5px;
     border: #acacac solid 2px;
     background-color: transparent;
@@ -55,34 +71,33 @@
     width: 100%;
 }
 
-#login-wrapper > #login-container > section > .form-group input:focus {
+#login-wrapper > #login-container > div > section > .form-group input:focus {
     border-color: #eee;
 }
 
-#login-wrapper > #login-container > section > .form-group input::placeholder {
+#login-wrapper > #login-container > div > section > .form-group input::placeholder {
     color: transparent;
 }
 
-#login-wrapper > #login-container > section > .form-group .form-label {
+#login-wrapper > #login-container > div > section > .form-group .form-label {
     position: absolute;
     top: 9px;
     left: 0;
-    font-size: 18px;
+    font-size: 1.15rem;
     padding: 0 10px;
     color: #acacac;
     pointer-events: none;
     transition: 0.15s all ease;
 }
 
-#login-wrapper > #login-container > section > .form-group input:focus + .form-label,
-#login-wrapper > #login-container > section > .form-group input:not(:placeholder-shown) + .form-label {
+#login-wrapper > #login-container > div > section > .form-group input:focus + .form-label,
+#login-wrapper > #login-container > div > section > .form-group input:not(:placeholder-shown) + .form-label {
     transform: translate(5px, -30px);
     background: transparent;
     color: #CBB26A;
-
 }
 
-#login-wrapper > #login-container > #login-btn {
+#login-wrapper > #login-container > div > #login-btn {
     margin: 10px auto;
     display: flex;
     background-color: #CBB26A;
@@ -99,8 +114,8 @@
     align-items: center;
 }
 
-#login-wrapper > #login-container > #signin-btn,
-#login-wrapper > #login-container > #forgot-pwd-btn {
+#login-wrapper > #login-container > div > #signin-btn,
+#login-wrapper > #login-container > div > #forgot-pwd-btn {
     margin: 2px auto;
     display: flex;
     background-color: transparent;
@@ -109,7 +124,7 @@
     letter-spacing: 1px;
 }
 
-#login-wrapper > #login-container > #forgot-pwd-btn:hover,
-#login-wrapper > #login-container > #signin-btn:hover {
+#login-wrapper > #login-container > div > #forgot-pwd-btn:hover,
+#login-wrapper > #login-container > div > #signin-btn:hover {
     color: #CBB26A;
 }

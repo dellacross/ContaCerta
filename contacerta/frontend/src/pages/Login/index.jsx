@@ -1,43 +1,149 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 import logo from '../../assets/images/logo-wo-background.png'
+import Copyright from '../../components/Copyright'
 
 const Login = () => {
-  return (
-    <div id="login-wrapper">
-        <div id="login-container">
-            <img src={logo} alt="logo" />
-            <h2>Login</h2>
-            <section>
-                <div className="form-group">
-                    <input 
-                        type="text" 
-                        placeholder='Email'
-                    />
-                    <label className='form-label' htmlFor="">Email</label>
-                </div>
-                <div className="form-group">
-                    <input 
-                        type="password" 
-                        placeholder='Senha'
-                    />
-                    <label className='form-label' htmlFor="">Senha</label>
-                </div>
-            </section>
-            <button
-                id="login-btn"
+
+    const [flipped, setFlipped] = useState(false)
+    const [name, setName] = useState(null)
+    const [email, setEmail] = useState(null)
+    const [password, setPassword] = useState(null)
+    const [passwordRpt, setPasswordRpt] = useState(null)
+
+    const handleFlip = () => {
+        setName(null)
+        setEmail(null)
+        setPassword(null)
+        setPasswordRpt(null)
+        setFlipped(!flipped)
+    }
+
+    const getCurrentYear = () => {
+        const date = new Date();
+        return date.getFullYear();
+    }
+
+    return (
+        <div id="login-wrapper">
+            <div 
+                id="login-container"
+                className={flipped ? 'flipped' : ''}
             >
-                Entrar
-            </button>
-            <button
-                id="forgot-pwd-btn"
-            >
-                Esqueci minha senha
-            </button>
-            <button id="signin-btn">Criar Conta</button>
+                {
+                    !flipped &&
+                    <div className="login">
+                        <img 
+                            src={logo} 
+                            alt="logo" 
+                        />
+                        <h2>Login</h2>
+                        <section>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="text" 
+                                    placeholder='Email'
+                                />
+                                <label 
+                                    className='form-label' 
+                                    htmlFor=""
+                                >
+                                    Email
+                                </label>
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    type="password" 
+                                    placeholder='Senha'
+                                />
+                                <label className='form-label' htmlFor="">Senha</label>
+                            </div>
+                        </section>
+                        <button
+                            id="login-btn"
+                        >
+                            Entrar
+                        </button>
+                        <button
+                            id="forgot-pwd-btn"
+                        >
+                            Esqueci minha senha
+                        </button>
+                        <button 
+                            id="signin-btn"
+                            onClick={handleFlip}
+                        >
+                            Criar Conta
+                        </button>
+                    </div>
+                }
+                {
+                    flipped &&
+                    <div className="signin">
+                        <img 
+                            src={logo} 
+                            alt="logo" 
+                        />
+                        <h2>Registrar</h2>
+                        <section>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    type="text" 
+                                    placeholder='Nome'
+                                />
+                                <label className='form-label' htmlFor="">Nome</label>
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="text" 
+                                    placeholder='Email'
+                                />
+                                <label className='form-label' htmlFor="">Email</label>
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    type="password" 
+                                    placeholder='Senha'
+                                />
+                                <label className='form-label' htmlFor="">Senha</label>
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={passwordRpt}
+                                    onChange={(e) => setPasswordRpt(e.target.value)}
+                                    type="password" 
+                                    placeholder='Repita a Senha'
+                                />
+                                <label className='form-label' htmlFor="">Repita a Senha</label>
+                            </div>
+                        </section>
+                        <button
+                            id="login-btn"
+                        >
+                            Registrar
+                        </button>
+                        <button 
+                            id="signin-btn"
+                            onClick={handleFlip}
+                        >
+                            Já tem uma conta? Faça login
+                        </button>
+                    </div>
+                }
+            </div>
+            <Copyright />
         </div>
-    </div>
-  )
+    )
 }
 
 export default Login

@@ -1,8 +1,10 @@
 import React from 'react'
 import './styles.css'
 import Aside from '../aside'
+import Copyright from '../../components/Copyright'
 
 const Wrapper = ({title, children}) => {
+
   return (
     <div id="wrapper">
       <Aside />
@@ -16,6 +18,7 @@ const Wrapper = ({title, children}) => {
         </header>
         {children}
       </main>
+      <Copyright />
     </div>
   )
 }
