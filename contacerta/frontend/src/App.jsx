@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DashBoard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
+import Calendar from './pages/Calendar';
 import AuthProvider from './context/provider';
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
           <Route 
             exact path="/login" 
             element={<Login />} 
+          />
+          <Route 
+            exact path="/calendar" 
+            element={<Calendar />} 
           />
         </Routes>
       </AuthProvider>

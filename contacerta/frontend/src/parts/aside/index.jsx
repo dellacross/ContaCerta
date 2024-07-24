@@ -7,6 +7,11 @@ const Aside = () => {
 
     const navigate = useNavigate()
 
+    const handleLogout = () => {
+        localStorage.removeItem("user")
+        navigate("/login")
+    }
+
     return (
         <aside>
             <img 
@@ -16,10 +21,10 @@ const Aside = () => {
             <main>
                 <nav>
                     <button onClick={() => navigate("/dashboard")}>
-                        <ion-icon name="apps"></ion-icon>
+                        <ion-icon name="grid"></ion-icon>
                         <span>Dashboard</span>
                     </button>
-                    <button>
+                    <button onClick={() => navigate("/calendar")}>
                         <ion-icon name="calendar"></ion-icon>
                         <span>Calendário</span>
                     </button>
@@ -38,7 +43,7 @@ const Aside = () => {
                     </button>
                     <button><ion-icon name="information-circle"></ion-icon></button>
                     <button><ion-icon name="cog"></ion-icon></button>
-                    <button><ion-icon name="log-out"></ion-icon></button>
+                    <button onClick={handleLogout}><ion-icon name="log-out"></ion-icon></button>
                 </footer>
             </main>
         </aside>

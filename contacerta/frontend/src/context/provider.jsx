@@ -13,13 +13,6 @@ export const AuthProvider = ({children}) => {
     setGastos(arr)
   }
 
-  useEffect(() => {
-    let user = localStorage.getItem("user")
-
-    if(!user) navigate("/login")
-    else navigate("/dashboard")
-  }, [navigate])
-
   return (
     <AuthContext.Provider value={{gastos, handleAddGasto}}>
       {children}

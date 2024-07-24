@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './styles.css'
 import logo from '../../assets/images/logo-wo-background.png'
 import Copyright from '../../components/Copyright'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
@@ -10,6 +11,7 @@ const Login = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [passwordRpt, setPasswordRpt] = useState(null)
+    const navigate = useNavigate("/")
 
     const handleFlip = () => {
         setName(null)
@@ -19,9 +21,9 @@ const Login = () => {
         setFlipped(!flipped)
     }
 
-    const getCurrentYear = () => {
-        const date = new Date();
-        return date.getFullYear();
+    const handleLogin = () => {
+        localStorage.setItem("user", "aaa")
+        navigate("/dashboard")
     }
 
     return (
@@ -65,6 +67,7 @@ const Login = () => {
                         </section>
                         <button
                             id="login-btn"
+                            onClick={handleLogin}
                         >
                             Entrar
                         </button>

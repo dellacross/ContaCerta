@@ -1,0 +1,336 @@
+#calendar-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+#calendar-wrapper > header {
+    width: 100%;
+    background: linear-gradient(to right, #3A415C, #535A71);
+    height: 60px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+                4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                -4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                0 4px 4px -2px rgba(0, 0, 0, 0.5); 
+}
+
+#calendar-wrapper > header > button {
+    padding: 5px 10px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #5f6a7e;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#calendar-wrapper > header > button:hover {
+    background-color: #CBB26A;
+    color: #3A415C;
+}
+
+#calendar-wrapper > main {
+    width: 70%;
+    height: calc(100% - 100px);
+    display: flex;
+    background: linear-gradient(to right, #3A415C, #535A71);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+                4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                -4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                0 4px 4px -2px rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    flex-direction: column;
+}
+
+#calendar-wrapper > main > header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1px solid #5f6a7e;
+}
+
+#calendar-wrapper > main > header > span {
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#calendar-wrapper > main > header > .btns {
+    display: flex;
+}
+
+#calendar-wrapper > main > header > .btns > button {
+    width: 40px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+}
+
+#calendar-wrapper > main > header > .btns > button:hover {
+    color: #ccc;
+}
+
+#calendar-wrapper > main > main {
+    height: calc(10% - 40px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    color: #fff;
+}
+
+#calendar-wrapper > main > main > header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+}
+
+#calendar-wrapper > main > main > header > span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar-wrapper > main > main > #days-wrapper {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#calendar-wrapper > main > main > #days-wrapper > .day {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    aspect-ratio: 1.22/1;
+    background-color: #a5acb981;
+}
+
+#calendar-wrapper > aside {
+    width: 27%;
+    height: calc(100% - 100px);
+    display: flex;
+    background: linear-gradient(to right, #3A415C, #535A71);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+                4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                -4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                0 4px 4px -2px rgba(0, 0, 0, 0.5); 
+    flex-direction: column;
+    padding: 10px 0 10px 10px;
+}
+
+#calendar-wrapper > aside > main > .day-expenses {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+    color: #fff;
+}
+
+#calendar-wrapper > aside > span,
+#calendar-wrapper > aside > main > .day-expenses > span {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#calendar-wrapper > aside > span {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #5f6a7e;
+    padding: 5px 0;
+}
+
+#calendar-wrapper > aside > main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > span {
+    margin-bottom: 5px;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #5f6a7e;
+    padding: 5px 10px;
+    border-bottom: 1px solid #5f6a7e;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > span {
+    display: flex;
+    width: 100%;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > span {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A415C;
+    margin-left: 2px;
+}
+
+
+
+
+
+
+
+/* colors */
+
+#calendar-wrapper > aside > main > .day-expenses > .health {
+    background-color: #FE8F8F;
+    border-left: 5px solid red;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .uber {
+    background-color: rgb(139, 139, 139);
+    border-left: 5px solid #000;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .leisure {
+    background-color: rgb(208, 111, 221);
+    border-left: 5px solid rgb(98, 36, 106);
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .food {
+    background-color: #b17365;
+    border-left: 5px solid #603A31;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .home {
+    background-color: #AB8B6D;
+    border-left: 5px solid #603A31;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .market {
+    background-color: #78d4ad;
+    border-left: 5px solid #54B68C;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .others {
+    background-color: #e0e0e0;
+    border-left: 5px solid #b9b9b9;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .gifts {
+    background-color: #ffdc41;
+    border-left: 5px solid #F6C800;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .study {
+    background-color: #76eaff;
+    border-left: 5px solid #37e1ff;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .health {
+    background-color: red;
+    color: #FE8F8F;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .uber {
+    background-color: #000;
+    color: rgb(139, 139, 139);
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .leisure {
+    background-color: rgb(98, 36, 106);
+    color: rgb(208, 111, 221);
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .food {
+    background-color: #603A31;
+    color: #b17365;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .home {
+    color: #AB8B6D;
+    background-color: #603A31;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .market {
+    color: #a4e4c8;
+    background-color: #54B68C;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .others {
+    background-color: #b9b9b9;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .gifts {
+    background-color: #F6C800;
+}
+
+#calendar-wrapper > aside > main > .day-expenses > .expenses > h4 > .categories > .study {
+    background-color: #37e1ff;
+}
+
+/* end colors */

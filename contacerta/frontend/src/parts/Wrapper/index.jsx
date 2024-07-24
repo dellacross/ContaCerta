@@ -11,10 +11,7 @@ const Wrapper = ({title, children}) => {
       <main>
         <header>
           <h2>{title}</h2>
-          <span>
-            <button>Cadastrar</button>
-            <button>Entrar</button>
-          </span>
+          <span>Gasto Atual: R$ 0.000,00</span>
         </header>
         {children}
       </main>
