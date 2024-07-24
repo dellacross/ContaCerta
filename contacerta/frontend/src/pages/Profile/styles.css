@@ -1,0 +1,113 @@
+#profile-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+#profile-container > div {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--linear-gradient);
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+    4px 0 4px -2px rgba(0, 0, 0, 0.5),
+    -4px 0 4px -2px rgba(0, 0, 0, 0.5); 
+}
+
+#profile-container > #datas-container {
+    width: 40%;
+    height: 300px;
+    display: flex;
+    padding: 10px; 
+}
+
+#profile-container > #datas-container > #user-photo {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgb(0,0,0,0.1);
+    font-size: 100px;
+    color: #fff;
+}
+
+#profile-container > #datas-container > #user-datas {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    width: calc(100% - 200px);
+}
+
+#profile-container > div h2 {
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+#profile-container > #datas-container > #user-datas > h2 > span {
+    margin-top: 10px;
+}
+
+#profile-container > div h2 > button {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+}
+
+#profile-container > div h2 > button:hover {
+    color: #fff;
+}
+
+#profile-container > div h2 > button > ion-icon {
+    font-size: 1.8rem;
+}
+
+#profile-container > #datas-container > #user-datas > span {
+    display: flex;
+    padding: 0 10px;
+}
+
+#profile-container > #datas-container > #user-datas > span > p {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#profile-container > #datas-container > #user-datas > span > p:first-child {
+    color: #ccc;
+    margin-right: 10px;
+}
+
+#profile-container > #datas-container > #user-datas > span > p:last-child {
+    font-weight: 600;
+}
+
+#profile-container > #accounts,
+#profile-container > #members {
+    width: 28%;
+    height: 300px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#profile-container > #accounts > h2,
+#profile-container > #members > h2 {
+    color: #ccc;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,122 @@
+#wrapper > aside {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    background: linear-gradient(to right, #3A415C, #535A71);
+}
+
+#wrapper > aside > main {
+    height: calc(100% - 60px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrapper > aside > main > nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding:  10px 0;
+    align-items: center;
+}
+
+#wrapper > aside > main > nav > button {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 15px;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: none;
+    background: transparent;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+                4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                -4px 0 4px -2px rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+#wrapper > aside > main > nav > button:hover {
+    background: #CBB26A;
+}
+
+#wrapper > aside > main > nav > button > ion-icon {
+    margin-right: 10px;
+    font-size: 1.35rem;
+}
+
+#wrapper > aside > main > footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #353b46;
+    flex-wrap: wrap;
+}
+
+#wrapper > aside > main > footer > button:first-child {
+    width: 90%;
+    height: 50px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    justify-content: flex-start;
+    padding: 0 15px;
+    font-weight: 600;
+}
+
+#wrapper > aside > main > footer > button:first-child > ion-icon {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+#wrapper > aside > main > footer > button:first-child > span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#wrapper > aside > main > footer > button:first-child > span > strong {
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+}
+
+#wrapper > aside > main > footer > button:first-child > span > p {
+    margin: 0;
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+}
+
+#wrapper > aside > main > footer > button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    border: none;
+    background: transparent;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 
+                4px 0 4px -2px rgba(0, 0, 0, 0.5),
+                -4px 0 4px -2px rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#wrapper > aside > main > footer > button:hover {
+    background-color: #CBB26A;
+}

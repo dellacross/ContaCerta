@@ -4,9 +4,13 @@ body, html {
     display: block;
     font-size: 15px;
     margin: 0;
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', sans-serif;
     box-sizing: border-box;
-    background-color: #353b46;
+    background-color: #a5acb981;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 * {
@@ -43,4 +47,5 @@ body, html {
 
 :root {
     --main-color: #21252B;
+    --linear-gradient: linear-gradient(to right, #3A415C, #535A71);
 }

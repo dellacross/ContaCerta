@@ -1,31 +1,19 @@
 import React from 'react'
 import './styles.css'
-import Header from '../header/index.jsx'
-import Footer from '../footer/index.jsx'
-import Aside from '../aside/index.jsx'
+import Aside from '../aside'
 
-const Wrapper = ({children}) => {
+const Wrapper = ({title, children}) => {
   return (
     <div id="wrapper">
-      <aside>
-        <header>
-          <ion-icon name="thumbs-up-outline"></ion-icon>
-          <span>ContaCerta</span>
-        </header>
-        <main>
-          <nav>
-            <button>
-              <ion-icon name="home"></ion-icon>
-              <span>Home</span>
-            </button>
-            <button>
-              <ion-icon name="calendar"></ion-icon>
-              <span>Calendário</span>
-            </button>
-          </nav>
-        </main>
-      </aside>
+      <Aside />
       <main>
+        <header>
+          <h2>{title}</h2>
+          <span>
+            <button>Cadastrar</button>
+            <button>Entrar</button>
+          </span>
+        </header>
         {children}
       </main>
     </div>
