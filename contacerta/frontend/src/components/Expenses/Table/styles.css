@@ -1,0 +1,122 @@
+#expenses-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#expenses-wrapper > header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#expenses-wrapper > header > #month-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#expenses-wrapper > header > #month-btns > span {
+    margin: 0 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#expenses-wrapper > header > #month-btns > button {
+    background-color: transparent;
+    font-size: 1.5rem;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#expenses-wrapper > header > #month-btns > button:hover {
+    color: #3A415C;
+}
+
+#expenses-wrapper > header > button {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 25px;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #3A415C, #535A71);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 4px 0 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+#expenses-wrapper > header > button:hover {
+    color: #ccc;
+}
+
+#expenses-wrapper > header > strong {
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 4px 0 4px -2px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #3A415C, #535A71);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 35px;
+}
+
+#expenses-wrapper > #table-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: calc(100% - 35px);
+    padding: 10px 0;
+}
+
+#expenses-wrapper > #table-wrapper > header {
+    width: calc(100% - 7px);
+    display: flex;
+    min-height: 40px;
+    background: linear-gradient(to right, #3A415C, #535A71);
+    border-radius: 10px;
+    border: 2px solid #7b7f8d;
+}
+
+#expenses-wrapper > #table-wrapper > header > span {
+    min-width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#expenses-wrapper > #table-wrapper > header > span:last-child {
+    min-width: 50px;
+}
+
+#expenses-wrapper > #table-wrapper .description {
+    width: 100%;
+    justify-content: flex-start !important;
+}
+
+#expenses-wrapper > #table-wrapper > main {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-right: 2px;
+}
+

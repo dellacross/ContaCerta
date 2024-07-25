@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import './styles.css'
-import { AuthContext } from '../../context/provider'
 
 const Gasto = (props) => {
 

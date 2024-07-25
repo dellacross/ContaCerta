@@ -20,10 +20,6 @@ const Aside = () => {
             />
             <main>
                 <nav>
-                    <button>
-                        <ion-icon name="analytics"></ion-icon>
-                        <span>Análises</span>
-                    </button>
                     <button onClick={() => navigate("/calendar")}>
                         <ion-icon name="calendar"></ion-icon>
                         <span>Calendário</span>
@@ -45,8 +41,8 @@ const Aside = () => {
                             <p>Perfil</p>
                         </span>
                     </button>
-                    <button><ion-icon name="information-circle"></ion-icon></button>
-                    <button><ion-icon name="cog"></ion-icon></button>
+                    <button onClick={() => navigate("/aboutus")}><ion-icon name="information-circle"></ion-icon></button>
+                    <button onClick={() => navigate("/configs")}><ion-icon name="cog"></ion-icon></button>
                     <button onClick={handleLogout}><ion-icon name="log-out"></ion-icon></button>
                 </footer>
             </main>
