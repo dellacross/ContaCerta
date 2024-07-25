@@ -20,17 +20,21 @@ const Aside = () => {
             />
             <main>
                 <nav>
-                    <button onClick={() => navigate("/dashboard")}>
-                        <ion-icon name="grid"></ion-icon>
-                        <span>Dashboard</span>
+                    <button>
+                        <ion-icon name="analytics"></ion-icon>
+                        <span>Análises</span>
                     </button>
                     <button onClick={() => navigate("/calendar")}>
                         <ion-icon name="calendar"></ion-icon>
                         <span>Calendário</span>
                     </button>
-                    <button>
-                        <ion-icon name="analytics"></ion-icon>
-                        <span>Análises</span>
+                    <button onClick={() => navigate("/dashboard")}>
+                        <ion-icon name="grid"></ion-icon>
+                        <span>Dashboard</span>
+                    </button>
+                    <button onClick={() => navigate("/expenses")}>
+                        <ion-icon name="bar-chart"></ion-icon>
+                        <span>Gastos</span>
                     </button>
                 </nav>
                 <footer>

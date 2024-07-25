@@ -26,7 +26,7 @@ button:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #a5acb981;
+    background: #3A415C;
 }
 
 ::-webkit-scrollbar-thumb,
@@ -42,7 +42,7 @@ button:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: #cccccc;
+    background: transparent;
 }
 
 :root {

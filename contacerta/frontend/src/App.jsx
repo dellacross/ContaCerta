@@ -5,6 +5,7 @@ import DashBoard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Calendar from './pages/Calendar';
+import Expenses from './pages/Expenses';
 import AuthProvider from './context/provider';
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
           <Route 
             exact path="/calendar" 
             element={<Calendar />} 
+          />
+          <Route 
+            exact path="/expenses" 
+            element={<Expenses />} 
           />
         </Routes>
       </AuthProvider>

@@ -1,0 +1,32 @@
+#expenses-wrapper > #table-wrapper > main > .expense {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    background-color: #535A71;
+    align-items: center;
+    margin: 5px 0;
+    border-radius: 10px;
+    border: 2px solid #7b7f8d;
+}
+
+#expenses-wrapper > #table-wrapper > main > .expense > span {
+    height: 100%;
+    min-width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#expenses-wrapper > #table-wrapper > main > .expense > .edit {
+    font-size: 1.3rem;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+#expenses-wrapper > #table-wrapper > main > .expense > .edit:hover {
+    color: #ccc;
+}
