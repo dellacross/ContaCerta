@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  name String
+  email String
+  password String
+  rent Float?
+  image String?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map("users")
+
+  bankAccounts BankAccount[]
+  groups Group[]
+}
+
+model Group {
+  id String @id @default(uuid())
+  name String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("groups")
+
+  members Member[] 
+  user_id String
+}
+
+model Member {
+  id String @id @default(uuid())
+  name String
+  rent Float?
+  image String?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  group Group @relation(fields: [group_id], references: [id])
+
+  @@map ("members")
+
+  group_id String
+}
+
+model BankAccount {
+  id String @id @default(uuid())
+  name String
+  balance String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("bank_accounts")
+
+  user_id String
+}
+
+model Expense {
+  id String @id @default(uuid())
+  description String
+  date String
+  value String
+  category_id String
+  form_of_payment_id String
+  member_id String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+  
+  @@map ("expenses")
+}
+
+model Category {
+  id String @id @default(uuid())
+  name String
+  color String?
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map ("categories")
+}

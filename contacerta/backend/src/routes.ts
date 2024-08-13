@@ -1,9 +1,11 @@
-import { Router, Response, Request } from 'express'
+import { Router } from 'express'
+import { RegisterUserController } from './controllers/user/RegisterUserController'
+import { LoginUserController } from './controllers/user/LoginUserController'
 
 const router = Router()
 
-router.get('/teste', (req: Request, res: Response) => {
-    return res.json({ok: true})
-})
+// user routes
+router.post('/register', new RegisterUserController().handle)
+router.post('/login', new LoginUserController().handle)
 
 export { router }
