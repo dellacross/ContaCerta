@@ -7,7 +7,7 @@ interface UserRequest {
 class ListUserDetailsService {
     async execute({ user_id }: UserRequest) {
 
-        const user = prismaClient.user.findFirst({
+        const user = await prismaClient.user.findFirst({
             where: {
                 id: user_id
             },
