@@ -10,6 +10,7 @@ import { DeleteGroupController } from './controllers/group/DeleteGroupController
 import { AddMemberController } from './controllers/member/AddMemberController'
 import { ListGroupsController } from './controllers/group/ListGroupsController'
 import { ListMembersController } from './controllers/member/ListMembersController'
+import { DeleteMemberController } from './controllers/member/DeleteMemberController'
 
 const router = Router()
 
@@ -28,5 +29,6 @@ router.get('/groups', isAuthenticated, new ListGroupsController().handle)
 // member routes
 router.put('/addmember', isAuthenticated, new AddMemberController().handle)
 router.get('/listmembers', isAuthenticated, new ListMembersController().handle)
+router.delete('/deletemember', isAuthenticated, new DeleteMemberController().handle)
 
 export { router }
