@@ -26,6 +26,7 @@ import { ListBankAccountsController } from './controllers/bankaccount/ListBankAc
 import { ListCategoriesController } from './controllers/category/ListCategoriesController'
 import { ListExpensesController } from './controllers/expense/ListExpensesController'
 import { ListPaymentMethodsController } from './controllers/paymentmethod/ListPaymentMethodsController'
+import { ListExpensesByMemberController } from './controllers/expense/ListExpensesByMemberController'
 
 const router = Router()
 
@@ -61,6 +62,7 @@ router.delete('/deletepaymentmethod', isAuthenticated, new DeletePaymentMethodCo
 // expense routes
 router.post('/createexpense', isAuthenticated, new CreateExpenseController().handle)
 router.get('/expenses', isAuthenticated, new ListExpensesController().handle)
+router.get('/expenses/member', isAuthenticated, new ListExpensesByMemberController().handle)
 router.put('/editexpense', isAuthenticated, new EditExpenseController().handle)
 router.delete('/deleteexpense', isAuthenticated, new DeleteExpenseController().handle)
 
