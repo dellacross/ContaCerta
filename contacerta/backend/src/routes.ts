@@ -13,6 +13,9 @@ import { ListMembersController } from './controllers/member/ListMembersControlle
 import { DeleteMemberController } from './controllers/member/DeleteMemberController'
 import { CreateCategoryController } from './controllers/category/CreateCategoryController'
 import { UpdateCategoryController } from './controllers/category/UpdateCategoryController'
+import { CreatePaymentMethodController } from './controllers/paymentmethod/CreatePaymentMethodController'
+import { EditPaymentMethodController } from './controllers/paymentmethod/EditPaymentMethodController'
+import { DeletePaymentMethodController } from './controllers/paymentmethod/DeletePaymentMethodController'
 
 const router = Router()
 
@@ -38,5 +41,9 @@ router.post('/createcategory', isAuthenticated, new CreateCategoryController().h
 router.delete('/deletecategory', isAuthenticated, new CreateCategoryController().handle)
 router.put('/updatecategory', isAuthenticated, new UpdateCategoryController().handle)
 
+// payment method routes
+router.post('/createpaymentmethod', isAuthenticated, new CreatePaymentMethodController().handle)
+router.put('/editpaymentmethod', isAuthenticated, new EditPaymentMethodController().handle)
+router.delete('/deletepaymentmethod', isAuthenticated, new DeletePaymentMethodController().handle)
 
 export { router }

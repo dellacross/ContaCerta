@@ -77,12 +77,14 @@ model BankAccount {
 
 model Expense {
   id String @id @default(uuid())
+  user_id String
   description String
   date String
   value String
   category_id String
-  form_of_payment_id String
+  payment_method_id String
   member_id String
+  installments Int
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
   
@@ -97,4 +99,13 @@ model Category {
   updated_at DateTime? @default(now())
 
   @@map ("categories")
+}
+
+model PaymentMethod {
+  id String @id @default(uuid())
+  name String
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@map ("paymentmethods")
 }
