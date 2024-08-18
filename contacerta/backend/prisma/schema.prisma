@@ -32,7 +32,6 @@ model User {
 model Group {
   id String @id @default(uuid())
   name String
-  members Member[] @relation("MemberGroups")
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
@@ -40,6 +39,7 @@ model Group {
 
   @@map("groups")
 
+  members Member[]
   user_id String
 }
 
@@ -48,11 +48,14 @@ model Member {
   name String
   rent Float?
   image String?
-  groups Group[] @relation("MemberGroups")
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
 
+  group Group @relation(fields: [group_id], references: [id])
+
   @@map ("members")
+
+  group_id String
 }
 
 model BankAccount {
