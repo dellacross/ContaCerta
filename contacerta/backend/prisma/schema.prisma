@@ -80,11 +80,14 @@ model Expense {
   user_id String
   description String
   date String
+  init_date String?
+  last_date String?
   value String
   category_id String
   payment_method_id String
   member_id String
-  installments Int
+  installments Int?
+  bank_account_id String?
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
   

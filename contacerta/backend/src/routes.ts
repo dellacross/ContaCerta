@@ -16,6 +16,9 @@ import { UpdateCategoryController } from './controllers/category/UpdateCategoryC
 import { CreatePaymentMethodController } from './controllers/paymentmethod/CreatePaymentMethodController'
 import { EditPaymentMethodController } from './controllers/paymentmethod/EditPaymentMethodController'
 import { DeletePaymentMethodController } from './controllers/paymentmethod/DeletePaymentMethodController'
+import { CreateExpenseController } from './controllers/expense/CreateExpenseController'
+import { EditExpenseController } from './controllers/expense/EditExpenseController'
+import { DeleteExpenseController } from './controllers/expense/DeleteExpenseController'
 
 const router = Router()
 
@@ -45,5 +48,10 @@ router.put('/updatecategory', isAuthenticated, new UpdateCategoryController().ha
 router.post('/createpaymentmethod', isAuthenticated, new CreatePaymentMethodController().handle)
 router.put('/editpaymentmethod', isAuthenticated, new EditPaymentMethodController().handle)
 router.delete('/deletepaymentmethod', isAuthenticated, new DeletePaymentMethodController().handle)
+
+// expense routes
+router.post('/createexpense', isAuthenticated, new CreateExpenseController().handle)
+router.put('/editexpense', isAuthenticated, new EditExpenseController().handle)
+router.delete('/deleteexpense', isAuthenticated, new DeleteExpenseController().handle)
 
 export { router }
