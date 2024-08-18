@@ -7,8 +7,9 @@ import { ListUserDetailsController } from './controllers/user/ListUserController
 import { EndUserSessionController } from './controllers/user/DeleteUserAccountController'
 import { CreateGroupController } from './controllers/group/CreateGroupController'
 import { DeleteGroupController } from './controllers/group/DeleteGroupController'
-import { AddMemberController } from './controllers/group/AddMemberController'
+import { AddMemberController } from './controllers/member/AddMemberController'
 import { ListGroupsController } from './controllers/group/ListGroupsController'
+import { ListMembersController } from './controllers/member/ListMembersController'
 
 const router = Router()
 
@@ -22,7 +23,10 @@ router.delete('/deleteaccount', isAuthenticated, new EndUserSessionController().
 // group routes
 router.post('/creategroup', isAuthenticated, new CreateGroupController().handle)
 router.delete('/deletegroup', isAuthenticated, new DeleteGroupController().handle)
-router.put('/addmember', isAuthenticated, new AddMemberController().handle)
 router.get('/groups', isAuthenticated, new ListGroupsController().handle)
+
+// member routes
+router.put('/addmember', isAuthenticated, new AddMemberController().handle)
+router.get('/listmembers', isAuthenticated, new ListMembersController().handle)
 
 export { router }
