@@ -11,6 +11,8 @@ import { AddMemberController } from './controllers/member/AddMemberController'
 import { ListGroupsController } from './controllers/group/ListGroupsController'
 import { ListMembersController } from './controllers/member/ListMembersController'
 import { DeleteMemberController } from './controllers/member/DeleteMemberController'
+import { CreateCategoryController } from './controllers/category/CreateCategoryController'
+import { UpdateCategoryController } from './controllers/category/UpdateCategoryController'
 
 const router = Router()
 
@@ -30,5 +32,11 @@ router.get('/groups', isAuthenticated, new ListGroupsController().handle)
 router.put('/addmember', isAuthenticated, new AddMemberController().handle)
 router.get('/listmembers', isAuthenticated, new ListMembersController().handle)
 router.delete('/deletemember', isAuthenticated, new DeleteMemberController().handle)
+
+// category routes
+router.post('/createcategory', isAuthenticated, new CreateCategoryController().handle)
+router.delete('/deletecategory', isAuthenticated, new CreateCategoryController().handle)
+router.put('/updatecategory', isAuthenticated, new UpdateCategoryController().handle)
+
 
 export { router }
