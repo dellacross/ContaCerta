@@ -10,7 +10,8 @@ interface ExpenseRequest {
     payment_method_id: string,
     member_id: string,
     installments: number,
-    bank_account_id: string
+    bank_account_id: string,
+    payment_category_id: string
 }
 
 interface DateInterface {
@@ -26,7 +27,7 @@ function getLastMonth({init_date, installments}: DateInterface) {
 
 class CreateExpenseService {
     async execute({ user_id, description, date, init_date, value, category_id, 
-                    payment_method_id, member_id, installments, bank_account_id}: ExpenseRequest) {
+                    payment_method_id, member_id, installments, bank_account_id, payment_category_id}: ExpenseRequest) {
 
         let last_date = undefined
 
@@ -54,7 +55,8 @@ class CreateExpenseService {
                 installments: installments,
                 init_date: init_date,
                 last_date: last_date,
-                bank_account_id: bank_account_id
+                bank_account_id: bank_account_id,
+                payment_category_id: payment_category_id
             }
         })
 

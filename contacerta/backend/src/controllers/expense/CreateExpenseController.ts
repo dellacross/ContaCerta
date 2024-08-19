@@ -13,7 +13,8 @@ class CreateExpenseController {
             member_id, 
             installments,
             init_date,
-            bank_account_id
+            bank_account_id,
+            payment_category_id
         } = req.body
 
         const createExpense = new CreateExpenseService()
@@ -28,7 +29,8 @@ class CreateExpenseController {
             payment_method_id, 
             member_id, 
             installments,
-            bank_account_id
+            bank_account_id,
+            payment_category_id
         })
 
         return res.json({

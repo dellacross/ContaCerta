@@ -12,7 +12,8 @@ class EditExpenseController {
             category_id, 
             payment_method_id, 
             member_id, 
-            installments
+            installments,
+            payment_category_id
         } = req.body
 
         const editExpense = new EditExpenseService()
@@ -26,7 +27,8 @@ class EditExpenseController {
             category_id, 
             payment_method_id, 
             member_id, 
-            installments
+            installments,
+            payment_category_id
         })
 
         return res.json({

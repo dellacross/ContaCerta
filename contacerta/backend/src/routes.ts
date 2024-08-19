@@ -27,6 +27,10 @@ import { ListCategoriesController } from './controllers/category/ListCategoriesC
 import { ListExpensesController } from './controllers/expense/ListExpensesController'
 import { ListPaymentMethodsController } from './controllers/paymentmethod/ListPaymentMethodsController'
 import { ListExpensesByMemberController } from './controllers/expense/ListExpensesByMemberController'
+import { CreatePaymentCategoryController } from './controllers/paymentcategory/CreatePaymentCategoryController'
+import { UpdatePaymentCategoryController } from './controllers/paymentcategory/UpdatePaymentCategoryController'
+import { DeletePaymentCategoryController } from './controllers/paymentcategory/DeletePaymentCategoryController'
+import { ListPaymentCategoryController } from './controllers/paymentcategory/ListPaymentCategoryController'
 
 const router = Router()
 
@@ -71,5 +75,11 @@ router.post('/createbankaccount', isAuthenticated, new CreateBankAccountControll
 router.get('/bankaccounts', isAuthenticated, new ListBankAccountsController().handle)
 router.put('/editbankaccount', isAuthenticated, new EditBankAccountController().handle)
 router.delete('/deletebankaccount', isAuthenticated, new DeleteBankAccountController().handle)
+
+// payment category routes
+router.post('/createpaymentcategory', isAuthenticated, new CreatePaymentCategoryController().handle)
+router.get('/listpaymentcategory', new ListPaymentCategoryController().handle)
+router.put('/updatepaymentcategory', isAuthenticated, new UpdatePaymentCategoryController().handle)
+router.delete('/deletepaymentcategory', isAuthenticated, new DeletePaymentCategoryController().handle)
 
 export { router }
