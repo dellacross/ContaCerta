@@ -9,7 +9,8 @@ const Aside = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("user")
-        navigate("/login")
+        localStorage.removeItem("token")
+        navigate("/")
     }
 
     return (

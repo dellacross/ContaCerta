@@ -3,6 +3,8 @@ import './styles.css'
 import logo from '../../assets/images/logo-wo-background.png'
 import Copyright from '../../components/Copyright'
 import { useNavigate } from 'react-router-dom'
+import { registerUser } from '../../services/RegisterUserService'
+import { loginUser } from '../../services/LoginUserService'
 
 const Login = () => {
 
@@ -21,9 +23,27 @@ const Login = () => {
         setFlipped(!flipped)
     }
 
-    const handleLogin = () => {
-        localStorage.setItem("user", "aaa")
-        navigate("/dashboard")
+    const handleLogin = async () => {
+    
+        const data = await loginUser(email, password)
+
+        if(data?.status === 200) {
+            localStorage.setItem("token", data?.data?.token)
+            localStorage.setItem("user", JSON.stringify(data?.data))
+            navigate("/dashboard")
+        }
+    }
+
+    const handleRegister = async () => {
+        const data = await registerUser(name, email, password)
+
+        if(data?.status === 200) {
+            setFlipped(true)
+            setName(null)
+            setEmail(null)
+            setPassword(null)
+            setPasswordRpt(null)
+        }
     }
 
     return (
@@ -132,6 +152,7 @@ const Login = () => {
                         </section>
                         <button
                             id="login-btn"
+                            onClick={handleRegister}
                         >
                             Registrar
                         </button>

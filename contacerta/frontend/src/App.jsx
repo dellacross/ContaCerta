@@ -24,7 +24,7 @@ function App() {
             element={<Profile />} 
           />
           <Route 
-            exact path="/login" 
+            exact path="/" 
             element={<Login />} 
           />
           <Route 

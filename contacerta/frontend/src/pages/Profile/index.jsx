@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './styles.css'
 import Wrapper from '../../parts/Wrapper'
+import axios from 'axios'
 
 const Profile = () => {
+
+  const [profile, setProfile] = useState(null)
+
+  const getProfile = async () => {
+
+    const token = localStorage.getItem('token')
+
+    return await 
+    axios
+    .get('http://localhost:3333/profile', 
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    )
+  }
+
+  useEffect(() => {
+    getProfile().then(response => {
+      setProfile(response.data)
+      console.log(response.data)
+    })
+  }, [])
+
   return (
     <Wrapper title={"Perfil"}>
       <div id="profile-container">
@@ -12,16 +38,16 @@ const Profile = () => {
           </div>
           <div id="user-datas">
             <h2>
-              <span>Full User Name</span>
+              <span>{profile?.name}</span>
               <button><ion-icon name="create-outline"></ion-icon></button>
             </h2>
             <span>
               <p>Email</p>
-              <p>user@user.com</p>
+              <p>{profile?.email}</p>
             </span>
             <span>
               <p>Renda Fixa Mensal</p>
-              <p>R$ 0.000,00</p>
+              <p>{`R$ ${profile?.rent}`}</p>
             </span>
           </div>
         </div>
