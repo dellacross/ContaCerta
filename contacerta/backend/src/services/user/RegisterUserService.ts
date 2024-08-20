@@ -8,7 +8,7 @@ interface UserRequest {
 }
 
 class RegisterUserService {
-    async execute({ name, email, password}: UserRequest) {
+    async execute({ name, email, password }: UserRequest) {
         if(!email) throw new Error("Email incorreto!")
         
         // verifica se o email ja esta cadastrado
@@ -19,6 +19,8 @@ class RegisterUserService {
         })
 
         if(userAlreadyExists) throw new Error("Usuário já existente")
+
+        if(password?.length < 8) throw new Error("Sua senha deve ter, pelo menos, 8 caracteres")
 
         const passwordHash = await hash(password, 8) // senha criptografada
 

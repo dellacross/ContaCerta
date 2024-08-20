@@ -37,6 +37,7 @@ class LoginUserService {
             id: user.id,
             name: user.name, 
             email: user.email,
+            draft: user.draft,
             token: token
         }
     }
