@@ -102,6 +102,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: column;
 }
 
 #profile-container > #accounts > h2,
@@ -110,4 +111,39 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+#profile-container > #members > main,
+#profile-container > #accounts > main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#profile-container > #accounts > main > p {
+    font-weight: 600;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+#profile-container > #members > main > span {
+    margin: 5px 0;
+    width: 100%;
+}
+
+#profile-container > #charts {
+    width: 70%;
+    height: 500px;
+}
+
+#profile-container > #goals {
+    width: 28%;
+    height: 500px;
 }

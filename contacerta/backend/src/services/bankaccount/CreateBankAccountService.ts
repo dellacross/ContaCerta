@@ -8,6 +8,14 @@ interface BankAccountRequest {
 
 class CreateBankAccountService {
     async execute({ name, balance, user_id }: BankAccountRequest) {
+
+        const bankAccountAlreadyExists = await prismaClient.bankAccount.findFirst({
+            where: {
+                name: name,
+                user_id: user_id
+            }
+        })
+
         const bankAccount = prismaClient.bankAccount.create({
             data: {
                 name: name,

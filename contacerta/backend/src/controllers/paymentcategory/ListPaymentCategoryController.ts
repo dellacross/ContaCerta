@@ -5,7 +5,7 @@ class ListPaymentCategoryController {
     async handle(req: Request, res: Response) {
         const listPaymentCategory = new ListPaymentCategoryService()
 
-        const payments = listPaymentCategory.execute()
+        const payments = await listPaymentCategory.execute()
 
         return res.json(payments)
     }

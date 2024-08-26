@@ -40,6 +40,7 @@ router.post('/login', new LoginUserController().handle)
 router.put('/edit', isAuthenticated, new EditUserDetailsController().handle)
 router.get('/profile', isAuthenticated, new ListUserDetailsController().handle)
 router.delete('/deleteaccount', isAuthenticated, new EndUserSessionController().handle)
+router.get('/users', isAuthenticated, new ListUserDetailsController().handle)
 
 // group routes
 router.post('/creategroup', isAuthenticated, new CreateGroupController().handle)

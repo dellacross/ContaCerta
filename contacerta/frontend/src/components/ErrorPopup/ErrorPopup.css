@@ -1,0 +1,24 @@
+#error-popup {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+    border: 2px solid #D04746;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    padding-right: 10px;
+}
+
+#error-popup > span {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #D04746;
+    font-size: 3rem;
+    margin: 0;
+}

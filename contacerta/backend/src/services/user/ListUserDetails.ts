@@ -11,13 +11,10 @@ class ListUserDetailsService {
             where: {
                 id: user_id
             },
-            select: {
-                name: true,
-                email: true,
-                rent: true,
-                image: true,
-                created_at: true,
-                updated_at: true
+            include: {
+                groups: true,
+                members: true,
+                bankAccounts: true
             }
         })
 

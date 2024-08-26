@@ -20,6 +20,7 @@ model User {
   password String
   rent Float?
   image String?
+  balance String? @default("0")
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
   draft Boolean? @default(false)
@@ -29,6 +30,7 @@ model User {
   bankAccounts BankAccount[]
   groups Group[]
   members Member[]
+  goals Goal[]
 }
 
 model Group {
@@ -122,4 +124,20 @@ model PaymentCategory {
   updated_at DateTime? @default(now())
 
   @@map ("paymentcategories")
+}
+
+model Goal {
+  id String @id @default(uuid())
+  description String
+  time String
+  monthlyContribution String
+  achieved Boolean? @default(false)
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("goals")
+
+  user_id String
 }

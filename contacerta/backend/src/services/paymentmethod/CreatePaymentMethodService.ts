@@ -6,7 +6,16 @@ interface PaymentMethodRequest {
 
 class CreatePaymentMethodService {
     async execute({ name }: PaymentMethodRequest) {
-        const paymentMethod = prismaClient.paymentMethod.create({
+
+        const paymentMethodAlreadyExists = await prismaClient.paymentMethod.findFirst({
+            where: {
+                name: name
+            }
+        })
+
+        if(paymentMethodAlreadyExists) throw new Error("Método de pagamento já existente")
+
+        const paymentMethod = await prismaClient.paymentMethod.create({
             data: {
                 name: name
             }

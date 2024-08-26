@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './styles.css'
 import logo from '../../assets/images/logo-wo-background.png'
 import Copyright from '../../components/Copyright'
 import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../../services/RegisterUserService'
-import { loginUser } from '../../services/LoginUserService'
+import { Context } from '../../context/provider'
 
 const Login = () => {
 
@@ -13,7 +13,11 @@ const Login = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [passwordRpt, setPasswordRpt] = useState(null)
-    const navigate = useNavigate("/")
+    const { 
+        setError,
+        login
+    } = useContext(Context)
+    const navigate = useNavigate()
 
     const handleFlip = () => {
         setName(null)
@@ -24,14 +28,7 @@ const Login = () => {
     }
 
     const handleLogin = async () => {
-    
-        const data = await loginUser(email, password)
-
-        if(data?.status === 200) {
-            localStorage.setItem("token", data?.data?.token)
-            localStorage.setItem("user", JSON.stringify(data?.data))
-            navigate("/dashboard")
-        }
+        await login(email, password);
     }
 
     const handleRegister = async () => {

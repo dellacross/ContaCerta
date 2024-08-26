@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.css'
 import Wrapper from '../../parts/Wrapper'
+import axios from 'axios'
 
 const Calendar = () => {
+
+    const [expenseCategories, setExpenseCategories] = useState([])
+
+    useEffect(() => {
+        axios
+        .get('http://localhost:3333/listpaymentcategory')
+        .then(response => setExpenseCategories(response.data || []))
+        .catch(error => console.log(error))
+    }, [])
 
     return (
         <Wrapper title="Calendário">
             <div id="calendar-wrapper">
                 <header>
-                    <button>Fixos</button>
-                    <button>Próprios</button>
-                    <button>Variáveis</button>
+                {
+                    expenseCategories && expenseCategories?.map(item => (
+                        <button
+                            key={item.id}
+                        >
+                            <span>{item.name}</span>
+                        </button>
+                    ))
+                }
                 </header>
                 <main>
                     <header>
