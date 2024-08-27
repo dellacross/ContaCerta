@@ -8,9 +8,9 @@ export const Context = createContext({})
 export const AuthProvider = ({children}) => {   
 
   const [error, setError] = useState(null)
+  const [user, setUser] = useState(null)
   const navigate = useNavigate()
 
-  
   const login = async (email, password) => {
 
     const response = await loginUser(email, password)
@@ -18,6 +18,7 @@ export const AuthProvider = ({children}) => {
     if(response?.status === 200) {
       localStorage.setItem("token", response?.data?.token)
       localStorage.setItem("user", JSON.stringify(response?.data))
+      setUser(response?.data)
       navigate("/dashboard")
     } else {
       setError(response?.response?.data?.error)
@@ -32,13 +33,13 @@ export const AuthProvider = ({children}) => {
     }
   }, [error])
 
-
   return (
     <Context.Provider 
       value={{
         error, 
         setError,
-        login
+        login,
+        user
       }}
     >
       { error && <ErrorPopup /> }

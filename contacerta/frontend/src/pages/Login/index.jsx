@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 import './styles.css'
 import logo from '../../assets/images/logo-wo-background.png'
 import Copyright from '../../components/Copyright'
-import { useNavigate } from 'react-router-dom'
 import { registerUser } from '../../services/RegisterUserService'
 import { Context } from '../../context/provider'
 
@@ -13,11 +12,10 @@ const Login = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
     const [passwordRpt, setPasswordRpt] = useState(null)
+    const [nickname, setNickname] = useState(null)
     const { 
-        setError,
         login
     } = useContext(Context)
-    const navigate = useNavigate()
 
     const handleFlip = () => {
         setName(null)
@@ -25,6 +23,7 @@ const Login = () => {
         setPassword(null)
         setPasswordRpt(null)
         setFlipped(!flipped)
+        setNickname(null)
     }
 
     const handleLogin = async () => {
@@ -32,14 +31,15 @@ const Login = () => {
     }
 
     const handleRegister = async () => {
-        const data = await registerUser(name, email, password)
+        const response = await registerUser(name, email, password, nickname)
 
-        if(data?.status === 200) {
+        if(response?.data?.status === 200) {
             setFlipped(true)
             setName(null)
             setEmail(null)
             setPassword(null)
             setPasswordRpt(null)
+            setNickname(null)
         }
     }
 
@@ -118,6 +118,15 @@ const Login = () => {
                                     placeholder='Nome'
                                 />
                                 <label className='form-label' htmlFor="">Nome</label>
+                            </div>
+                            <div className="form-group">
+                                <input 
+                                    defaultValue={nickname}
+                                    onChange={(e) => setNickname(e.target.value)}
+                                    type="text" 
+                                    placeholder='Usuário'
+                                />
+                                <label className='form-label' htmlFor="">Usuário</label>
                             </div>
                             <div className="form-group">
                                 <input 
