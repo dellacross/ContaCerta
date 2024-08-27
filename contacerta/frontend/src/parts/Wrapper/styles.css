@@ -27,11 +27,29 @@
     box-shadow: 2px 2px 3px #464646, 2px 2px 3px #666666;
 }
 
-#wrapper > main > header > span {
+#wrapper > main > header > section {
     color: #fff;
     font-weight: 600;
     font-size: 1.3rem;
     letter-spacing: 1px;
+    display: flex;
+}
+
+#wrapper > main > header > section > p {
+    margin: 0;
+}
+
+#wrapper > main > header > section > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: #fff;
 }
 
 #wrapper > main > header > h2 {

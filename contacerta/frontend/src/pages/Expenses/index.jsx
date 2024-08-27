@@ -9,7 +9,7 @@ const Expenses = () => {
     const [openForm, setOpenForm] = useState(false)
 
     return (
-        <Wrapper title="Gastos">
+        <Wrapper title="Extrato">
             { !openForm && <Table setOpenForm={setOpenForm} /> }
             { openForm && <Form /> }
         </Wrapper>

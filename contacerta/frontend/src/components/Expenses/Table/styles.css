@@ -40,7 +40,11 @@
     color: #3A415C;
 }
 
-#expenses-wrapper > header > button {
+#expenses-wrapper > header > section {
+    display: flex;
+}
+
+#expenses-wrapper > header > section > button {
     height: 35px;
     display: flex;
     justify-content: center;
@@ -56,11 +60,20 @@
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5), 4px 0 4px -2px rgba(0, 0, 0, 0.5);
 }
 
+#expenses-wrapper > header > section > button:last-child {
+    padding: 0;
+    height: 35px;
+    width: 35px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
 #expenses-wrapper > header > button:hover {
     color: #ccc;
 }
 
-#expenses-wrapper > header > strong {
+#expenses-wrapper > header > section > strong {
     font-size: 1.1rem;
     color: #fff;
     display: flex;
@@ -71,6 +84,29 @@
     border-radius: 10px;
     padding: 0 10px;
     height: 35px;
+}
+
+#expenses-wrapper > header > section > strong:nth-child(2) {
+    margin: 0 10px;
+}
+
+#expenses-wrapper > header > section > strong > span {
+    margin-right: 5px;
+    display: flex;
+    margin-right: 5px;
+    padding: 0;
+}
+
+#expenses-wrapper > header > section > strong > span:first-child {
+    font-size: 1.4rem;
+}
+
+#expenses-wrapper > header > section > strong:first-child > span:first-child  {
+    color: rgb(0, 202, 0);
+}
+
+#expenses-wrapper > header > section > strong:nth-child(2) > span:first-child  {
+    color: red;
 }
 
 #expenses-wrapper > #table-wrapper {

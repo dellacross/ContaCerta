@@ -10,7 +10,9 @@ const Gasto = (props) => {
             <span className='description'>Descrição</span>
             <span>Valor</span>
             <span>Método</span>
+            <span>Grupo</span>
             <span>Membro</span>
+            <span>Conta</span>
             <span className='edit'><ion-icon name="ellipsis-horizontal"></ion-icon></span>
         </div>
   )

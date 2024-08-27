@@ -33,7 +33,7 @@ const Aside = () => {
                     </button>
                     <button onClick={() => navigate("/expenses")}>
                         <ion-icon name="bar-chart"></ion-icon>
-                        <span>Gastos</span>
+                        <span>Extrato</span>
                     </button>
                 </nav>
                 <footer>

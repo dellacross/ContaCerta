@@ -6,13 +6,25 @@ const Table = (props) => {
   return (
     <div id="expenses-wrapper">
         <header>
-            <strong>Total gasto: R$ 0.000,00</strong>
+            <section>
+                <strong>
+                    <span><ion-icon name="arrow-up-outline"></ion-icon></span>
+                    <span>R$ 0.000,00</span>
+                </strong>
+                <strong>
+                    <span><ion-icon name="arrow-down-outline"></ion-icon></span>
+                    <span>R$ 0.000,00</span>
+                </strong>
+            </section>
             <div id="month-btns">
                 <button><ion-icon name="chevron-back"></ion-icon></button>
                 <span>Mês</span>
                 <button><ion-icon name="chevron-forward"></ion-icon></button>
             </div>
-            <button onClick={() => props.setOpenForm(true)}>Adicionar gasto</button>
+            <section>
+                <button onClick={() => props.setOpenForm(true)}>Adicionar</button>
+                <button><ion-icon name="settings-outline"></ion-icon></button>
+            </section>
         </header>
         <div id="table-wrapper">
             <header>
@@ -21,7 +33,9 @@ const Table = (props) => {
                 <span className='description'>Descrição</span>
                 <span>Valor</span>
                 <span>Método</span>
+                <span>Grupo</span>
                 <span>Membro</span>
+                <span>Conta</span>
                 <span></span>
             </header>
             <main>

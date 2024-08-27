@@ -9,10 +9,10 @@ export const AuthProvider = ({children}) => {
 
   const [error, setError] = useState(null)
   const [user, setUser] = useState(null)
+  const [hideDatas, setHideDatas] = useState(true)
   const navigate = useNavigate()
 
   const login = async (email, password) => {
-
     const response = await loginUser(email, password)
 
     if(response?.status === 200) {
@@ -39,7 +39,9 @@ export const AuthProvider = ({children}) => {
         error, 
         setError,
         login,
-        user
+        user,
+        hideDatas, 
+        setHideDatas
       }}
     >
       { error && <ErrorPopup /> }
