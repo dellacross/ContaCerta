@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react'
 import ErrorPopup from '../components/ErrorPopup/ErrorPopup'
 import { loginUser } from '../services/LoginUserService'
 import { useNavigate } from 'react-router-dom'
+import { GetMenuItemsService } from '../services/GetMenuItemsService'
 
 export const Context = createContext({})
 
@@ -10,6 +11,7 @@ export const AuthProvider = ({children}) => {
   const [error, setError] = useState(null)
   const [user, setUser] = useState(null)
   const [hideDatas, setHideDatas] = useState(true)
+  const [menuItems, setMenuItems] = useState(null)
   const navigate = useNavigate()
 
   const login = async (email, password) => {
@@ -19,6 +21,8 @@ export const AuthProvider = ({children}) => {
       localStorage.setItem("token", response?.data?.token)
       localStorage.setItem("user", JSON.stringify(response?.data))
       setUser(response?.data)
+      const menuItems = await GetMenuItemsService()
+      setMenuItems(menuItems?.data)
       navigate("/dashboard")
     } else {
       setError(response?.response?.data?.error)
@@ -41,7 +45,8 @@ export const AuthProvider = ({children}) => {
         login,
         user,
         hideDatas, 
-        setHideDatas
+        setHideDatas,
+        menuItems
       }}
     >
       { error && <ErrorPopup /> }

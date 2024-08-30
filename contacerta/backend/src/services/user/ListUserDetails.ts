@@ -18,7 +18,20 @@ class ListUserDetailsService {
             }
         })
 
-        return user
+        return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            groups: user.groups,
+            members: user.members,
+            bankAccounts: user.bankAccounts,
+            created_at: user.created_at,
+            image: user.image,
+            admin: user.admin,
+            nickname: user.nickname,
+            rent: user.rent,
+            balance: user.balance
+        }
     }
 }
 

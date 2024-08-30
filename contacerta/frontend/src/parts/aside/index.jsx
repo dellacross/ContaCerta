@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './styles.css'
 import { useNavigate } from "react-router-dom";
 import logo from '../../assets/images/logo.png'
@@ -7,13 +7,18 @@ import { Context } from '../../context/provider';
 const Aside = () => {
 
     const navigate = useNavigate()
-    const { user } = useContext(Context)
+    const { 
+        user,
+        menuItems
+    } = useContext(Context)
 
     const handleLogout = () => {
         localStorage.removeItem("user")
         localStorage.removeItem("token")
         navigate("/")
     }
+
+    useEffect(() => {console.log("mi", menuItems)}, [menuItems])
 
     return (
         <aside>
@@ -23,18 +28,16 @@ const Aside = () => {
             />
             <main>
                 <nav>
-                    <button onClick={() => navigate("/calendar")}>
-                        <ion-icon name="calendar"></ion-icon>
-                        <span>Calendário</span>
-                    </button>
-                    <button onClick={() => navigate("/dashboard")}>
-                        <ion-icon name="grid"></ion-icon>
-                        <span>Dashboard</span>
-                    </button>
-                    <button onClick={() => navigate("/expenses")}>
-                        <ion-icon name="bar-chart"></ion-icon>
-                        <span>Extrato</span>
-                    </button>
+                {
+                    menuItems && menuItems?.map(item => (
+                        <button
+                            key={item?.id}
+                            onClick={() => navigate(`${item?.endpoint}`)}
+                        >
+                            {item?.pageName}
+                        </button>
+                    ))
+                }
                 </nav>
                 <footer>
                     <button onClick={() => navigate("/profile")}>

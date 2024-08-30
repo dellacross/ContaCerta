@@ -9,6 +9,7 @@ import Expenses from './pages/Expenses';
 import Config from '../src/pages/Config'
 import AboutUs from '../src/pages/AboutUs'
 import AuthProvider from './context/provider';
+import BankAccount from './pages/BankAccount';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           <Route 
             exact path="/" 
             element={<Login />} 
+          />
+          <Route 
+            exact path="/bankaccounts" 
+            element={<BankAccount />} 
           />
           <Route 
             exact path="/calendar" 

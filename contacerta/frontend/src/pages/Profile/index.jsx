@@ -81,7 +81,7 @@ const Profile = () => {
             }
             {
               profile?.groups?.length === 0 && profile?.groups &&
-              <p>Nenhuma conta bancária cadastrada...</p>
+              <p>Nenhum grupo cadastrado...</p>
             }
           </main>
         </div>
