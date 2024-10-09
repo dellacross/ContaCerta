@@ -16,6 +16,7 @@ const Form = () => {
     const [date, setDate] = useState(null)
     const [description, setDescription] = useState(null)
     const [value, setValue] = useState(null)
+    const [fixedExpense, setFixedExpense] = useState(false)
 
     const handleSteps = (id) => {
         if((currentStep+id) >= 1 && (currentStep+id) <= 3) setCurrentStep(currentStep+id)
@@ -33,7 +34,11 @@ const Form = () => {
                 setDate,
                 date,
                 setDescription,
-                description
+                description,
+                setValue,
+                value,
+                setFixedExpense,
+                fixedExpense
             }}
         >            
             <div id="form-wrapper">

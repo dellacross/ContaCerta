@@ -13,52 +13,98 @@ const Datas = () => {
         setPaymentMethod,
         paymentMethod,
         setValue,
-        value
+        value,
+        setFixedExpense,
+        fixedExpense
     } = useContext(ExpenseFormContext)
 
     return (
         currentStep === 2 &&
         <section id="datas">
-            <div className="data">
-                <p>Data</p>
-                <input 
-                    type="date" 
-                    placeholder='Data'
-                    onChange={(e) => setDate(e.target.value)}
-                />
-            </div>
-            <div className="data">
-                <p>Descrição</p>
-                <input 
-                    type="text" 
-                    placeholder='Descrição'
-                    maxLength={25}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
-            </div>
-            <div className="data">
-                <p>Valor</p>
-                <input 
-                    type="text" 
-                    placeholder='Valor'
-                    onChange={(e) => setValue(e.target.value)}
-                />
+            <div className="data input-datas">
+                <section>
+                    <p>Data</p>
+                    <input 
+                        type="date" 
+                        placeholder='Data'
+                        onChange={(e) => setDate(e.target.value)}
+                    />
+                </section>
+                <section>
+                    <p>Descrição</p>
+                    <input 
+                        type="text" 
+                        placeholder='Descrição'
+                        maxLength={25}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                </section>
+                <section>
+                    <p>Valor</p>
+                    <input 
+                        type="text" 
+                        placeholder='Valor'
+                        onChange={(e) => setValue(e.target.value)}
+                    />
+                </section>
+                <section className="fixed-expense">
+                    <input 
+                        name='fixed-expense-dot'
+                        id='fixed-expense-dot'
+                        type="checkbox" 
+                        onChange={(e) => setFixedExpense(e.target.checked)}
+                    />
+                    <span>
+                        { fixedExpense && <div className="checked-dot" /> }
+                    </span>
+                    <label htmlFor='fixed-expense-dot'>Cobrança recorrente</label>
+                </section>
             </div>
             <div className="data payment-method">
                 <p>Forma de pagamento</p>
                 <div id="methods">
-                    <button>Crédito à vista</button>
-                    <button>Crédito parcelado</button>
-                    <button>Débito</button>
-                    <button>Dinheiro</button>
-                    <button>Pix</button>
-                    <button>Pix parcelado</button>
+                    <button 
+                        onClick={() => setPaymentMethod(1)}
+                        className={paymentMethod === 1 ? 'current-payment-method' : ''}
+                    >
+                        Crédito à vista
+                    </button>
+                    <button 
+                        onClick={() => setPaymentMethod(2)}
+                        className={paymentMethod === 2 ? 'current-payment-method' : ''}
+                    >
+                        Crédito parcelado
+                    </button>
+                    <button 
+                        onClick={() => setPaymentMethod(3)}
+                        className={paymentMethod === 3 ? 'current-payment-method' : ''}
+                    >
+                        Débito
+                    </button>
+                    <button 
+                        onClick={() => setPaymentMethod(4)}
+                        className={paymentMethod === 4 ? 'current-payment-method' : ''}
+                    >
+                        Dinheiro
+                    </button>
+                    <button 
+                        onClick={() => setPaymentMethod(5)}
+                        className={paymentMethod === 5 ? 'current-payment-method' : ''}
+                    >
+                        Pix
+                    </button>
+                    <button 
+                        onClick={() => setPaymentMethod(6)}
+                        className={paymentMethod === 6 ? 'current-payment-method' : ''}
+                    >
+                        Pix parcelado
+                    </button>
                 </div>
                 <div id="method-configs">
                     <section>
                         <p>Parcelas</p>
                         <input 
-                            type="text" 
+                            type="number" 
                             placeholder='Parcelas'
                         />
                     </section>
