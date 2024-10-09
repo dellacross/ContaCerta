@@ -15,9 +15,10 @@ const Form = () => {
     const [paymentMethod, setPaymentMethod] = useState(null)
     const [date, setDate] = useState(null)
     const [description, setDescription] = useState(null)
+    const [value, setValue] = useState(null)
 
     const handleSteps = (id) => {
-        if((currentStep+id) >= 1 && (currentStep+id) <= 4) setCurrentStep(currentStep+id)
+        if((currentStep+id) >= 1 && (currentStep+id) <= 3) setCurrentStep(currentStep+id)
     }
 
     return (
@@ -38,17 +39,15 @@ const Form = () => {
             <div id="form-wrapper">
                 <div id="container">
                     <aside>
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>4</span>
+                        <span className={currentStep === 1 ? 'current-step' : ''}>1</span>
+                        <span className={currentStep === 2 ? 'current-step' : ''}>2</span>
+                        <span className={currentStep === 3 ? 'current-step' : ''}>3</span>
                     </aside>
                     <main>
                         <header>
                             <span className={`step ${currentStep === 1 ? 'active' : ''}`}>Categoria</span>
                             <span className={`step ${currentStep === 2 ? 'active' : ''}`}>Dados</span>
-                            <span className={`step ${currentStep === 3 ? 'active' : ''}`}>Membros</span>
-                            <span className={`step ${currentStep === 4 ? 'active' : ''}`}>Confirmação</span>
+                            <span className={`step ${currentStep === 3 ? 'active' : ''}`}>Confirmação</span>
                         </header>
                         <div id="line-container">
                             <div 

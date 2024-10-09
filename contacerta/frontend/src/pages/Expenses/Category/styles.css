@@ -16,6 +16,12 @@
     cursor: pointer;
 }
 
+#form-wrapper > #container > main > article > #categories > .category:hover {
+    color: #CBB26A;
+    border: 2px solid #cbb26a;
+    background-color: rgb(203, 178, 106, 0.2);
+}
+
 #form-wrapper > #container > main > article > #categories > .category > ion-icon {
     font-size: 4rem;
 }

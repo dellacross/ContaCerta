@@ -68,29 +68,86 @@
     background-color: rgb(203, 178, 106, 0.2);
 }
 
-#form-wrapper > #container > main > article > #datas > .membros {
-    width: 100%;
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs {
     display: flex;
+    width: 100%;
 }
 
-#form-wrapper > #container > main > article > #datas > .membros > #select-container {
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs > section {
     width: 100%;
-    display: flex;
-    gap: 10px;
-}
-
-#form-wrapper > #container > main > article > #datas > .membros > #select-container > .selected-container {
-    width: 60%;
     height: 50px;
-    display: flex;
+}
+
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs > section > p {
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs > section > input {
+    font-size: 1.1rem;
     border-radius: 10px;
     box-shadow: inset 0 0 10px rgb(0,0,0,0.3);
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
 }
 
-#form-wrapper > #container > main > article > #datas > .membros > #select-container > select {
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs > section > input::placeholder {
+    color: #ccc;
+}
+
+#form-wrapper > #container > main > article > #datas > .payment-method > #method-configs > section > select {
     width: 20%;
     border-radius: 10px;
     background-color: rgb(83, 90, 113);
     cursor: pointer;
     padding: 5px 10px;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > section {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > section > p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > #selected-list {
+    width: 50%;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > section > .selected-container {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgb(0,0,0,0.3);
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > section > select {
+    width: 20%;
+    border-radius: 10px;
+    background-color: rgb(83, 90, 113);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+#form-wrapper > #container > main > article > #datas > .membros > #groups > select,
+#form-wrapper > #container > main > article > #datas > .membros > #members > select {
+    width: 100%;
+    height: 100%;
 }

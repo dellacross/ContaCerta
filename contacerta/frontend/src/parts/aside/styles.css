@@ -94,7 +94,6 @@
 
 #wrapper > aside > main > footer > button:first-child > span > p {
     margin: 0;
-    font-size: 0.8rem;
     width: 100%;
     display: flex;
 }

@@ -11,7 +11,9 @@ const Datas = () => {
         setDate,
         date,
         setPaymentMethod,
-        paymentMethod
+        paymentMethod,
+        setValue,
+        value
     } = useContext(ExpenseFormContext)
 
     return (
@@ -22,6 +24,7 @@ const Datas = () => {
                 <input 
                     type="date" 
                     placeholder='Data'
+                    onChange={(e) => setDate(e.target.value)}
                 />
             </div>
             <div className="data">
@@ -29,6 +32,8 @@ const Datas = () => {
                 <input 
                     type="text" 
                     placeholder='Descrição'
+                    maxLength={25}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
             </div>
             <div className="data">
@@ -36,6 +41,7 @@ const Datas = () => {
                 <input 
                     type="text" 
                     placeholder='Valor'
+                    onChange={(e) => setValue(e.target.value)}
                 />
             </div>
             <div className="data payment-method">
@@ -46,27 +52,61 @@ const Datas = () => {
                     <button>Débito</button>
                     <button>Dinheiro</button>
                     <button>Pix</button>
+                    <button>Pix parcelado</button>
+                </div>
+                <div id="method-configs">
+                    <section>
+                        <p>Parcelas</p>
+                        <input 
+                            type="text" 
+                            placeholder='Parcelas'
+                        />
+                    </section>
+                    <section>
+                        <p>Conta</p>
+                        <select 
+                            name="" 
+                            id=""
+                        >
+                            
+                        </select>
+                    </section>
+                    <section>
+                        <p>Cartão</p>
+                        <select 
+                            name="" 
+                            id=""
+                        >
+                            
+                        </select>
+                    </section>
                 </div>
             </div>
             <div className="data membros">
-                <p>Selecionados</p>
-                <div id="select-container">
+                <section id='selected-list'>
+                    <p>Selecionados</p>
                     <div className="selected-container">
 
                     </div>
+                </section>
+                <section id='groups'>
+                    <p>Grupos</p>
                     <select 
                         name="" 
                         id=""
                     >
 
                     </select>
+                </section>
+                <section id='members'>
+                    <p>Membros</p>
                     <select 
                         name="" 
                         id=""
                     >
 
                     </select>
-                </div>
+                </section>
             </div>
         </section>
     )
