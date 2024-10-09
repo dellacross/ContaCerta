@@ -33,7 +33,6 @@ const Wrapper = ({title, children}) => {
         </header>
         {children}
       </main>
-      <Copyright />
     </div>
   )
 }
