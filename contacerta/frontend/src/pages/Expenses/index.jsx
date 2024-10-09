@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, createContext } from 'react'
 import './styles.css'
 import Wrapper from '../../parts/Wrapper'
 import Table from '../../components/Expenses/Table'
 import Form from '../../components/Expenses/Form'
+
+export const ExpensePageContext = createContext()
 
 const Expenses = () => {
 
@@ -10,8 +12,15 @@ const Expenses = () => {
 
     return (
         <Wrapper title="Extrato">
-            { !openForm && <Table setOpenForm={setOpenForm} /> }
-            { openForm && <Form /> }
+            <ExpensePageContext.Provider 
+                value={{ 
+                    openForm, 
+                    setOpenForm 
+                }}
+            >
+                <Table />
+                <Form />
+            </ExpensePageContext.Provider>
         </Wrapper>
     )
 }

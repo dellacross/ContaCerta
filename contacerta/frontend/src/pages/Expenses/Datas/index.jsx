@@ -15,12 +15,30 @@ const Datas = () => {
         setValue,
         value,
         setFixedExpense,
-        fixedExpense
+        fixedExpense,
+        setEstablishment,
+        establishment,
+        setExpenseType,
+        expenseType
     } = useContext(ExpenseFormContext)
 
     return (
         currentStep === 2 &&
         <section id="datas">
+            <div className="data expense-type">
+                <button 
+                    onClick={() => setExpenseType(1)}
+                    className={expenseType === 1 ? 'positive' : ''}
+                >
+                    Entrada
+                </button>
+                <button 
+                    onClick={() => setExpenseType(2)}
+                    className={expenseType === 2 ? 'negative' : ''}
+                >
+                    Saída
+                </button>
+            </div>
             <div className="data input-datas">
                 <section>
                     <p>Data</p>
@@ -37,6 +55,15 @@ const Datas = () => {
                         placeholder='Descrição'
                         maxLength={25}
                         onChange={(e) => setDescription(e.target.value)}
+                    />
+                </section>
+                <section>
+                    <p>Estabelecimento</p>
+                    <input 
+                        type="text" 
+                        placeholder='Estabelecimento'
+                        maxLength={25}
+                        onChange={(e) => setEstablishment(e.target.value)}
                     />
                 </section>
                 <section>
