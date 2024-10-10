@@ -45,6 +45,7 @@ const Datas = () => {
                     <input 
                         type="date" 
                         placeholder='Data'
+                        defaultValue={date}
                         onChange={(e) => setDate(e.target.value)}
                     />
                 </section>
@@ -53,15 +54,17 @@ const Datas = () => {
                     <input 
                         type="text" 
                         placeholder='Descrição'
+                        defaultValue={description}
                         maxLength={25}
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </section>
-                <section id='local'>
+                <section id='establishment'>
                     <p>Estabelecimento</p>
                     <input 
                         type="text" 
                         placeholder='Estabelecimento'
+                        defaultValue={establishment}
                         maxLength={25}
                         onChange={(e) => setEstablishment(e.target.value)}
                     />
@@ -71,6 +74,7 @@ const Datas = () => {
                     <input 
                         type="text" 
                         placeholder='Valor'
+                        defaultValue={value}
                         onChange={(e) => setValue(e.target.value)}
                     />
                 </section>

@@ -30,6 +30,18 @@ const Form = () => {
         if((currentStep+id) >= 1 && (currentStep+id) <= 3) setCurrentStep(currentStep+id)
     }
 
+    const handleCloseForm = () => {
+        setOpenForm(false)
+        setCurrentStep(1)
+        setPaymentMethod(null)
+        setDate(null)
+        setDescription(null)
+        setValue(null)
+        setFixedExpense(false)
+        setEstablishment(null)
+        setExpenseType(null)
+    }
+
     return (
         openForm &&
         <ExpenseFormContext.Provider 
@@ -61,7 +73,7 @@ const Form = () => {
                             <span className={`step ${currentStep === 1 ? 'active' : ''}`}>Categoria</span>
                             <span className={`step ${currentStep === 2 ? 'active' : ''}`}>Dados</span>
                             <span className={`step ${currentStep === 3 ? 'active' : ''}`}>Confirmação</span>
-                            <button onClick={() => setOpenForm(false)}>Fechar</button>
+                            <button onClick={() => handleCloseForm()}>Fechar</button>
                         </header>
                         <div id="line-container">
                             <div 
