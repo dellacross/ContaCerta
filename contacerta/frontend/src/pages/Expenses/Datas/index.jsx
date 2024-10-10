@@ -40,7 +40,7 @@ const Datas = () => {
                 </button>
             </div>
             <div className="data input-datas">
-                <section>
+                <section id='date'>
                     <p>Data</p>
                     <input 
                         type="date" 
@@ -48,7 +48,7 @@ const Datas = () => {
                         onChange={(e) => setDate(e.target.value)}
                     />
                 </section>
-                <section>
+                <section id='description'>
                     <p>Descrição</p>
                     <input 
                         type="text" 
@@ -57,7 +57,7 @@ const Datas = () => {
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </section>
-                <section>
+                <section id='local'>
                     <p>Estabelecimento</p>
                     <input 
                         type="text" 
@@ -66,7 +66,7 @@ const Datas = () => {
                         onChange={(e) => setEstablishment(e.target.value)}
                     />
                 </section>
-                <section>
+                <section id='value'>
                     <p>Valor</p>
                     <input 
                         type="text" 
@@ -81,10 +81,13 @@ const Datas = () => {
                         type="checkbox" 
                         onChange={(e) => setFixedExpense(e.target.checked)}
                     />
-                    <span>
-                        { fixedExpense && <div className="checked-dot" /> }
-                    </span>
-                    <label htmlFor='fixed-expense-dot'>Cobrança recorrente</label>
+
+                    <label htmlFor='fixed-expense-dot'>
+                        <span>
+                            { fixedExpense && <div className="checked-dot" /> }
+                        </span>
+                        Cobrança recorrente
+                    </label>
                 </section>
             </div>
             <div className="data payment-method">

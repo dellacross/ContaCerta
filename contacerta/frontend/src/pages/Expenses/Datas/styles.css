@@ -84,6 +84,14 @@
     color: #fff;
 }
 
+#form-wrapper > #container > main > article > #datas > .input-datas > section#value {
+    width: 150px;
+}
+
+#form-wrapper > #container > main > article > #datas > .input-datas > section#date {
+    width: 185px;
+}
+
 #form-wrapper > #container > main > article > #datas > .input-datas > section > input::placeholder {
     color: #ccc;
 }
@@ -99,7 +107,7 @@
     display: none;
 }
 
-#form-wrapper > #container > main > article > #datas > .input-datas > .fixed-expense > span {
+#form-wrapper > #container > main > article > #datas > .input-datas > .fixed-expense > label > span {
     height: 20px;
     width: 20px;
     border-radius: 50%;
@@ -111,7 +119,7 @@
     align-items: center;
 }
 
-#form-wrapper > #container > main > article > #datas > .input-datas > .fixed-expense > span > .checked-dot {
+#form-wrapper > #container > main > article > #datas > .input-datas > .fixed-expense > label > span > .checked-dot {
     height: 10px;
     width: 10px;
     border-radius: 50%;
@@ -123,6 +131,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
+    display: flex;
 }
 
 #form-wrapper > #container > main > article > #datas > .payment-method {

@@ -56,11 +56,6 @@ const Form = () => {
         >            
             <div id="form-wrapper">
                 <div id="container">
-                    <aside>
-                        <span className={currentStep === 1 ? 'current-step' : ''}>1</span>
-                        <span className={currentStep === 2 ? 'current-step' : ''}>2</span>
-                        <span className={currentStep === 3 ? 'current-step' : ''}>3</span>
-                    </aside>
                     <main>
                         <header>
                             <span className={`step ${currentStep === 1 ? 'active' : ''}`}>Categoria</span>
